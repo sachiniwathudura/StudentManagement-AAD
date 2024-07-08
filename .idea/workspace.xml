@@ -9,25 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6995ebb-ba30-49f4-b3ae-0748b2153431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/studentmanagement/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/studentmanagement/controller/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/studentmanagement/controller/Students.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/studentmanagement/dto/StudentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/studentmanagement/util/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c6995ebb-ba30-49f4-b3ae-0748b2153431" name="Changes" comment="create util class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,10 +161,51 @@
       <updated>1720329545140</updated>
       <workItem from="1720329546170" duration="14483000" />
       <workItem from="1720362027851" duration="721000" />
+      <workItem from="1720447677221" duration="470000" />
     </task>
+    <task id="LOCAL-00001" summary="create student management project">
+      <option name="closed" value="true" />
+      <created>1720447981438</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720447981438</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create students controller class">
+      <option name="closed" value="true" />
+      <created>1720448027952</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720448027952</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create students dto class">
+      <option name="closed" value="true" />
+      <created>1720448043762</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720448043762</updated>
+    </task>
+    <task id="LOCAL-00004" summary="create util class">
+      <option name="closed" value="true" />
+      <created>1720448058599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720448058599</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create student management project" />
+    <MESSAGE value="create students controller class" />
+    <MESSAGE value="create students dto class" />
+    <MESSAGE value="create util class" />
+    <option name="LAST_COMMIT_MESSAGE" value="create util class" />
   </component>
 </project>
