@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5" style="border: 2px solid black; padding: 15px; background-color: rgb(220, 238, 255);">
+        <h2 style="text-align: center;">Student Data Form</h2>
+        <form id="studentForm" style="font-weight: 500;">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="Enter city">
+            </div>
+            <div class="form-group">
+                <label for="level">Level</label>
+                <input type="text" class="form-control" id="level" placeholder="Enter level">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary" style="background-color: rgb(145, 1, 1);">Reset</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#studentForm').on('submit', function(event) {
+                event.preventDefault();
+                
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var city = $('#city').val();
+                var level = $('#level').val();
+
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('City:', city);
+                console.log('Level:', level);
+
+                const studentData = {
+                name:name,
+                email:email,
+                city:city,
+                level:level
+            };
+            console.log(studentData)
+
+            const studentJSON = JSON.stringify(studentData)
+            console.log(studentJSON)
+
+            //introduce AJAX
+             const http = XMLHttpRequest()
+             http.onreadystatechange = ()=>{
+                if(http.readyState == 4){
+                    if(http.status  ==200){
+                        var responseTextJSON =JSON.stringify(http.responseText)
+                        console.log(responseTextJSON)
+                        }else{
+                            console.error("Failed")
+                            console.error("Status " + http.status)
+                            console.error("Ready state " + http.readyState)
+                        }
+                }else{
+                    console.error("Ready state " + http.readyState)
+                }
+             }
+             
+             http.open("POST", "http://localhost:8080/StudentManagementPortal/student",true)
+             http.setRequsetHeader("Content-Type", "application/json")
+             http.send(studentData)
+            
+
+            });
+            
+        });
+    </script>
+</body>
+</html>
