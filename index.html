@@ -64,27 +64,39 @@
             const studentJSON = JSON.stringify(studentData)
             console.log(studentJSON)
 
-            //introduce AJAX
-             const http = XMLHttpRequest()
-             http.onreadystatechange = ()=>{
-                if(http.readyState == 4){
-                    if(http.status  ==200){
-                        var responseTextJSON =JSON.stringify(http.responseText)
-                        console.log(responseTextJSON)
-                        }else{
-                            console.error("Failed")
-                            console.error("Status " + http.status)
-                            console.error("Ready state " + http.readyState)
-                        }
-                }else{
-                    console.error("Ready state " + http.readyState)
-                }
-             }
-             
-             http.open("POST", "http://localhost:8080/StudentManagementPortal/student",true)
-             http.setRequsetHeader("Content-Type", "application/json")
-             http.send(studentData)
+            //introduce AJAX - Native
+            //  const http = new  XMLHttpRequest()
+            //  http.onreadystatechange = ()=>{
+            //     if(http.readyState == 4){
+            //         if(http.status  ==200){
+            //             var responseTextJSON =JSON.stringify(http.responseText)
+            //             console.log(responseTextJSON)
+            //             }else{
+            //                 console.error("Failed")
+            //                 console.error("Status " + http.status)
+            //                 console.error("Ready state " + http.readyState)
+            //             }
+            //     }else{
+            //         console.error("Ready state " + http.readyState)
+            //     }
+            //  }
+            //  http.open("POST", "http://localhost:8080/StudentManagementPortal/student",true)
+            //  http.setRequsetHeader("Content-Type","application/json")
+            //  http.send(studentJSON)
             
+            // AJAX with jquery
+            $.ajax({
+                url:"http://localhost:8080/StudentManagementPortal/student",
+                type: "POST",
+                data : studentJSON,
+                headers: {"Content-Type " : "application/json"},
+                success : (res) => {
+                    console.log(JSON.stringify(res));
+                },
+                error : (res) => {
+                    confirm.error(res);
+                }
+            })
 
             });
             
