@@ -11,6 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.studentmanagement.dto.StudentDTO;
 import lk.ijse.studentmanagement.util.Util;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -31,13 +34,16 @@ public class Students extends HttpServlet {
 //        var initParameter = getServletContext().getInitParameter("myparam");
 //        System.out.println(initParameter);
         try {
-            var dbClass = getServletContext().getInitParameter("db-class");
-            var dbUrl = getServletContext().getInitParameter("dburl");
-            var dbUsername = getServletContext().getInitParameter("db-username");
-            var dbPassword  = getServletContext().getInitParameter("db-password");
-            Class.forName(dbClass);
-            this.connection = DriverManager.getConnection(dbUrl,dbUsername,dbPassword);
-        }catch (ClassNotFoundException | SQLException e){
+//            var dbClass = getServletContext().getInitParameter("db-class");
+//            var dbUrl = getServletContext().getInitParameter("dburl");
+//            var dbUsername = getServletContext().getInitParameter("db-username");
+//            var dbPassword  = getServletContext().getInitParameter("db-password");
+//            Class.forName(dbClass);
+            var ctx = new InitialContext();
+            DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/studentRegisPortal");
+            this.connection = pool.getConnection();
+
+        }catch (SQLException | NamingException e){
             e.printStackTrace();
         }
     }
